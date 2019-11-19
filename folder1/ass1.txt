@@ -1,0 +1,36 @@
+
+# Uber App
+
+
+startPoint = int(input("Enter the start point "))
+endPoint = int(input("Enter the end point"))
+fare = 100
+peakHour = True
+totalDistance = endPoint - startPoint
+print(totalDistance)
+if(totalDistance <= 5):
+  print(fare)
+
+else:
+  highDistance = totalDistance - 5
+  highDistance = highDistance * 8
+  fare = fare + highDistance
+
+if (peakHour):
+  fare = fare + 0.25 * fare
+
+print(fare)
+
+
+# greatest of Three
+
+a= 10
+b=56
+c=355
+
+if(a > b and a > c):
+  print("greatest is :a")
+elif(b > a and b > c):
+  print("greatest is :b")
+elif(c>a and c>b):
+  print("greatest is :c")
