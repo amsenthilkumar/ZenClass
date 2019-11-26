@@ -1,1 +1,399 @@
-hi
+num = 146
+sum = 0
+while num>0:
+   digit= num%10
+   sum = sum+digit
+   num=num//10
+print(sum)
+#################################################################
+a=[]
+lst=[]
+a=input().split()
+count =0
+for i in a:
+   if(int(i)%2==0):
+      count+=1
+      lst.append(i)
+print(lst)
+
+#################################################################
+print(count)
+
+lst1 = [1,2,3,4,5,6]
+lst2 = [3,4,5,67,8]
+
+for (i,j) in zip(lst1,lst2):
+   print(i,j)
+
+#################################################################
+
+def identicalMatrices(A, B):
+   if A == B:
+      print('Matrices are identical')
+   else:
+      print('Matrices are not identical')
+
+   # Driver program
+
+
+
+A = [1, 1, 1, 1]
+B = [1, 1, 1, 1]
+identicalMatrices(A, B)
+#################################################################
+
+
+lst = input().split()
+set1=set()
+for i in lst:
+   set1.add(i)
+   print(set1)
+
+#################################################################
+
+
+lst1= [5,6,7,8,9,0]
+lst2= [1,2,3,4,5,6]
+
+for i in lst2:
+   lst1.append(i)
+print(lst1)
+
+#################################################################
+
+k=1
+num = int(input("enter"))
+for i in range(1,num+1):
+   for j in range(1,k+1):
+      print("*", end=" ")
+   k=k+2
+   print()
+
+#################################################################
+
+list1 = input().split()
+list2 = [0]*len(list1)
+list3 = []
+
+for i in range(0,len(list1)):
+   for j in range(i+1,len(list1)):
+      if(list1[i] == list1[j]):
+         list2[i]+=1
+for i in range():
+
+list1 = [1, 2, 3]
+for e in list1:
+   str1 = ''.join
+   str(e)
+print(str1)
+
+#################################################################
+
+myTuple = ("John", "Peter", "Vicky")
+
+x = "#".join(myTuple)
+
+print(x)
+
+#################################################################
+
+myDict = {"name": "John", "country": "Norway"}
+mySeparator = "TEST"
+myLinker="REST"
+
+x = mySeparator.join(myDict)
+y = myLinker.join(myDict)
+print(myDict.values())
+
+#################################################################
+
+num = {'physics': 80, 'math': 90, 'chemistry': 86}
+for i in range(0,len(num)):
+   print(num)
+
+#################################################################
+
+lst1 = [10,20,30,40,50 ]
+for i in range(0,len(lst1)):
+#for i in lst1:
+    lst1[i]= lst1[i]+5
+print(lst1)
+countList =[]
+valueList = []
+lst1=[10,20,30,40,50,50,40,30]
+count=1
+
+for i in range(0,len(lst1)):
+    for j in range(i+1, len(lst1)):
+        if lst1[i] == lst1[j]:
+            count = count+1
+    countList.append(count)
+    valueList.append(lst1[i])
+    count = 1
+
+print(lst1)
+print(countList)
+print(valueList)
+
+
+    if(count>1):
+        print(lst1[i],count)
+for i in range(0,len(lst1)):
+
+#################################################################
+
+lst=[1,2,3,4,5,6,7,8]
+
+freq = []*len(lst)
+
+visited = -1
+
+for i in range(0,len(lst)):
+    count= 1
+    for j in range(i+1,len(lst)):
+        if(lst[i] == lst[j]):
+            count = count+1
+            freq[j]= visited
+
+    if(freq[i]!= visited):
+        freq[i]= count
+
+for i in range(0,len(freq)):
+    if(freq[i]!= visited):
+        print(lst[i]  +  freq[i])
+
+#################################################################
+
+l = input().split()
+value_list = []
+count_list = []
+for i in range(0, len(l)):
+    if l[i] not in value_list:
+        value_list.append(l[i])
+for i in value_list:
+    count_list.append(l.count(i))
+print(value_list)
+print(count_list)
+
+n = int(input())
+list1 = []
+for i in range(0, len(value_list)):
+    if (count_list[i] > 1):
+        list1.append(value_list[i])
+print(list1)
+print(list1[n - 1])
+
+#################################################################
+
+num = int(input("enter" ))
+i= 1
+while i <= num:
+    print(i)
+    i+=1
+
+num = int(input("enter" ))
+
+while num> 0:
+    print(num)
+    num-=1
+
+alpha = 0
+while alpha <= ((ord('a'))+26):
+
+    print(chr(alpha))
+    alpha  +=1
+    
+#################################################################
+
+
+num = int(input("enter"))
+i = 2
+while i < num :
+    if i%2 ==0:
+        print(i)
+    i+=1
+
+
+num = int(input("enter"))
+i = 1
+while i < num :
+    if i%2 !=0:
+        print(i)
+    i+=1
+
+#################################################################
+
+num = int(input("enter"))
+i = 1
+sum = 0
+while i < num:
+    sum = sum+i
+    i+=1
+print(sum)
+
+#################################################################
+
+num = int(input("enter"))
+i =2
+sum = 0
+while i<= num:
+    if i%2 == 0:
+        sum = sum+i
+    i+=1
+print(sum)
+
+#################################################################
+
+num = int(input("enter"))
+i =1
+sum = 0
+while i<= num:
+    if i%2 != 0:
+        sum = sum+i
+    i+=1
+print(sum)
+
+#################################################################
+
+num = int(input("enter"))
+product = 0
+for i in range(1, 13):
+    product = num*i
+    print(num,"X" , i, "=", product)
+
+#################################################################
+
+num = int(input("enter"))
+count = 0
+while num !=0:
+    digit = num%10
+    count = count+1
+    num = num//10
+print(count)
+
+#################################################################
+
+num = int(input("enter"))
+val = 0
+digit = num%10
+print(digit)
+
+#################################################################
+
+while num !=0:
+    digit = num%10
+    val = val*10+digit
+    num = num//10
+print(val)
+
+#################################################################
+
+def firstDigit(n):
+    # Remove last digit from number
+    # till only one digit is left
+    while n >= 10:
+        n = n / 10;
+
+        # return the first digit
+    return int(n)
+#################################################################
+
+
+# Find the last digit
+def lastDigit(n):
+    # return the last digit
+    return (n % 10)
+
+
+# Driver Code
+n = 98562;
+print(firstDigit(n), end=" ")
+print(lastDigit(n))
+
+#################################################################
+
+#Function to convert decimal number
+#to binary using recursion
+
+def DecimalToBinary(num):
+    if num > 1:
+        DecimalToBinary(num // 2)
+    print(num % 2, end='')
+
+
+# Driver Code
+if __name__ == '__main__':
+    # decimal value
+    dec_val = 24
+
+    # Calling function
+    DecimalToBinary(dec_val)
+#################################################################
+
+
+def firstDigit(n):
+    # Remove last digit from number
+    # till only one digit is left
+    while n >= 10:
+        n = n / 10;
+
+        # return the first digit
+    return int(n)
+
+
+# # Find the last digit
+# def lastDigit(n):
+#     # return the last digit
+#     return (n % 10)
+
+
+# Driver Code
+n = 98562;
+print(firstDigit(n), end=" ")
+#print(lastDigit(n))
+
+#################################################################
+
+n= 12345
+while n >= 10:
+    n = n// 10
+print(n)
+#################################################################
+
+def binToDec(binNum):
+    decNum = 0
+    power = 0
+    while binNum >0:
+        decNum +=2 ** power * (binNum%10)
+        binNum //=10
+        power+=1
+    return decNum
+
+print(binToDec(11001))
+
+#################################################################
+
+def decToBin(decNum):
+    binNum = 0
+    power= 0
+    while decNum>0:
+        digit = decNum%2
+        binNum = binNum + 10 ** power * digit
+        decNum//=2
+        power+=1
+    return binNum
+
+print(decToBin(123))
+
+#################################################################
+
+
+
+
+
+
+
+
+
+
+
