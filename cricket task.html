@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>CRICKET GAME
+</h2>
+<button onclick="getRndInteger1()" type="button">TEAM-1</button>
+
+<p id="demo1"></p>
+<button onclick="getRndInteger2()" type="button">TEAM-2</button>
+<p id="demo2"></p>
+
+<button onclick="findIndiScore()" type="button">player_wise_score_TEAM1</button>
+<p id="demo3"></p>
+
+<button onclick="findIndiScore1()" type="button">player_wise_score_TEAM2</button>
+<p id="demo6"></p>
+
+<button onclick="findManMatch()" type="button">Man_Of_Match</button>
+<p id="demo5"></p>
+
+
+<button onclick="findWinner()" type="button">Winner</button>
+<p id="demo"></p>
+
+<script>
+var arr1=[];
+var sum1=0;
+var arr2=[];
+var sum2=0;
+count1=1;
+count2=1;
+var i=1;
+var j=1;
+var playerScore={};
+var playerCount=1;
+var indiPlayScore={};
+var wickets=3;
+
+var playerScore1={};
+var playerCount1=1;
+var indiPlayScore1={};
+var wickets1=3;
+function getRndInteger1(){
+
+if(i<4){
+
+if(count1<=6 && wickets>0 && playerCount<4){
+
+score1=Math.round(Math.random()*6);
+if(score1==0){
+	wickets--;
+	playerCount++;
+}; 
+arr1.push(score1)
+sum1=arr1.reduce((a,b)=>a+b);
+
+document.getElementById("demo1").innerHTML ="the score is " +sum1+" runs";
+
+playerScore[playerCount]=sum1;
+
+count1++;
+return sum1;
+
+}
+else{alert(" Over"+i+" TEAM-1")}
+
+}
+
+i++;
+count1=1
+}
+
+function findIndiScore(){
+
+let size=Object.keys(playerScore).length
+let values = Object.values(playerScore)
+
+indiPlayScore[1]=values[0]
+
+for (let i=1;i<=size;i++) {
+    if(values[i]!= undefined){
+  indiPlayScore[i+1]=values[i]-values[i-1]
+    }
+}
+document.getElementById("demo3").innerHTML ="the player wise score  is " +JSON.stringify(indiPlayScore)+" runs";
+}
+
+function findOverScore(){
+
+document.getElementById("demo4").innerHTML ="the cumulative player  score  is " +JSON.stringify(playerScore)+" runs";
+
+}
+
+function findManMatch(){
+    
+	var values = Object.values(indiPlayScore)
+    var maxScore = maxValue(values);
+
+    var values1 = Object.values(indiPlayScore1)
+    var maxScore1 =maxValue(values1);
+
+    
+    if (maxScore<maxScore1){
+        var manMatch=values1.indexOf(maxValue(values1));
+		document.getElementById("demo5").innerHTML ="the highest scorer is player " +(manMatch+1)+" of TEAM -2  Congratsss!!!";
+    }else{
+        manMatch=values.indexOf(maxValue(values));
+		document.getElementById("demo5").innerHTML ="the highest scorer is player " +(manMatch+1)+" of TEAM -1  Congratsss!!!";
+    }
+
+    
+    
+    }
+
+function maxValue(values){
+	var max = values[0];
+	for (var i = 1; i < values.length; i++) {
+		if (values[i] > max) {
+			max = values[i];
+		}
+	}
+	return max;
+}
+
+
+
+
+function getRndInteger2(){
+
+if(j<4){
+
+if(count2<=6 && wickets1>0 && playerCount1<4){
+
+score2=Math.round(Math.random()*6);
+if(score2==0){
+	wickets1--;
+	playerCount1++;
+}; 
+arr2.push(score2)
+sum2=arr2.reduce((a,b)=>a+b);
+
+document.getElementById("demo2").innerHTML ="the score is " +sum2+" runs";
+
+playerScore1[playerCount1]=sum2;
+
+count2++;
+return sum2;
+
+}
+else{alert(" Over"+j+" TEAM-2")}
+
+}
+
+j++;
+count2=1
+}
+
+
+function findIndiScore1(){
+
+let size=Object.keys(playerScore1).length
+let values = Object.values(playerScore1)
+
+indiPlayScore1[1]=values[0]
+
+for (let i=1;i<=size;i++) {
+    if(values[i]!= undefined){
+  indiPlayScore1[i+1]=values[i]-values[i-1]
+    }
+}
+document.getElementById("demo6").innerHTML ="the player wise score  is " +JSON.stringify(indiPlayScore1)+" runs";
+}
+
+
+function findWinner(){
+
+	
+	
+	if(sum1<sum2){
+	document.getElementById("demo").innerHTML = "The winner is Team  2";
+	} else {
+	document.getElementById("demo").innerHTML = "The winner is  Team  1";
+}	
+
+}
+
+
+</script>
+
+</body>
+</html>

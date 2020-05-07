@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MARVEL</title>
+<style>
+    #spiderman{
+        height: 428px;
+        width: 23%;
+        margin-top: 807px;
+        margin-left: 36px;
+           
+    }
+
+    #spiderman{
+        height: 428px;
+        width: 23%;
+        margin-top: 807px;
+        margin-left: 36px;
+           
+    }
+    
+    #ca{
+        margin-top: -408px;
+        margin-left: 65%;
+        height: 428px;
+        width: 25%;
+           
+    }
+    #thor{
+        margin-top: 61%;
+    margin-left: 2%;
+        height: 388px;
+        width: 32%;
+    }
+    body{
+        height: 100%;
+        width: 100%;
+        background-color: ;
+        background-repeat: no-repeat;
+    }
+    .preview{
+        margin-top: -813px;
+        
+    }
+    #expandedImg{
+      height: 369px;
+      width:542px;
+      margin-left: 29%;
+      border-style: solid;
+        border-color: red;
+    }
+    #imgtext{
+        color:white;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 35px;
+        margin-left: 30%;
+    }
+
+    </style>
+</head>
+<body>
+    
+    <div id="preview-box"><img id="expandedImg"><a id="imgtext"></a></div>
+    <div class="preview">
+    <img id="img1" src="1.jpg" alt="img1" onclick="change(this)">
+     <img id="img2" src="2.jpg "onclick="change(this)" alt="1">
+     <img id="ca"src="captainamerica2.jpg" alt="captain america" onclick="change(this)">
+  </div>
+</body>
+<script>
+ function change(imgs) {
+  // Get the expanded image
+  var expandImg = document.getElementById("expandedImg");
+  // Get the image text
+  var preview = document.getElementById("preview-box");
+  // Use the same src in the expanded image as the image being clicked on from the grid
+  expandImg.src = imgs.src;
+  // Use the value of the alt attribute of the clickable image as text inside the expanded image
+  var imgtext=document.getElementById("imgtext");
+   imgtext.innerHTML = imgs.alt;
+  // Show the container element (hidden with CSS)
+ expandImg.parentElement.style.display = "block";
+}
+</script>
+</html>

@@ -1,0 +1,315 @@
+<html>
+
+<body>
+
+<script>
+var myJson=[
+  {
+       "productName" : "T-Shirt",
+       "basePrice" : 500,
+       "image" : "http://placehold.it/200x200",
+       "description" : "Des",
+       "varients" : [
+            {
+                 "type" : "Size",
+                 "values" : ["xl","xxl"]
+            },
+            {
+                 "type" : "Meterial",
+                 "values" : ["cotton","silk"]
+            },
+            {
+                 "type" : "Color",
+                 "values" : ["yellow","red"]
+            }
+       ],
+       "varientDetails" : [
+            {
+                 "size" : "xl",
+                 "meterial" : "cotton",
+                 "color" : "red",
+                 "addOnprice" : 30
+            },
+            {
+                 "size" : "xl",
+                 "meterial" : "cotton",
+                 "color" : "yellow",
+                 "addOnprice" : 40
+            },
+            {
+                 "size" : "xl",
+                 "meterial" : "silk",
+                 "color" : "red",
+                 "addOnprice" : 50
+            },
+            {
+                 "size" : "xl",
+                 "meterial" : "silk",
+                 "color" : "yellow",
+                 "addOnprice" : 60
+            },
+            {
+                 "size" : "xxl",
+                 "meterial" : "cotton",
+                 "color" : "red",
+                 "addOnprice" : 70
+            },
+            {
+                 "size" : "xxl",
+                 "meterial" : "cotton",
+                 "color" : "yellow",
+                 "addOnprice" : 80
+            },
+            {
+                 "size" : "xxl",
+                 "meterial" : "silk",
+                 "color" : "red",
+                 "addOnprice" : 90
+            },
+            {
+                 "size" : "xxl",
+                 "meterial" : "silk",
+                 "color" : "yellow",
+                 "addOnprice" : 100
+            }
+       ]
+  },
+  {
+       "productName" : "Saree",
+       "basePrice" : 5000,
+       "image" : "http://placehold.it/200x200",
+       "description" : "Des",
+       "varients" : [
+            {
+                 "type" : "Meterial",
+                 "values" : ["cotton","silk"]
+            },
+            {
+                 "type" : "Color",
+                 "values" : ["yellow","red"]
+            }
+       ],
+       "varientDetails" : [
+            {
+                 "meterial" : "cotton",
+                 "color" : "red",
+                 "addOnprice" : 30
+            },
+            {
+                 "meterial" : "cotton",
+                 "color" : "yellow",
+                 "addOnprice" : 40
+            },
+            {
+                 "meterial" : "silk",
+                 "color" : "red",
+                 "addOnprice" : 50
+            },
+            {
+                 "meterial" : "silk",
+                 "color" : "yellow",
+                 "addOnprice" : 60
+            }
+       ]
+  }
+];
+var myDiv=0;
+var rate=[];
+var addRate=0;
+var totalCartValue=[];
+
+function displayProducts(myJson){
+for (let i=0;i<myJson.length;i++){
+var arrKey=[];
+var arrVal=[];
+
+myDiv=document.createElement('div');
+myDiv.setAttribute('class','divi');
+myDiv.setAttribute('id','divi'+i);
+
+let myHead=document.createElement('h1');
+myHead.setAttribute('class','h1');
+myHead.innerText=myJson[i]["productName"];
+myDiv.appendChild(myHead);
+
+
+let myPic=document.createElement('img');
+myPic.setAttribute('src',myJson[i]["image"]);
+myDiv.appendChild(myPic);
+
+
+let myRate=document.createElement('h3');
+myRate.setAttribute('id','h3');
+myRate.innerHTML=myJson[i]["basePrice"];
+rate[i]=myJson[i]["basePrice"];
+myDiv.appendChild(myRate);
+
+let myBtn=document.createElement('button');
+myBtn.setAttribute('class','b1');
+myBtn.setAttribute('type','button');
+myBtn.innerText="Add To Cart";
+myBtn.addEventListener('click',function(){
+findExPrice(myJson,myPro,i);
+myPro=[];
+//console.log(myPro);
+});
+myDiv.appendChild(myBtn);
+
+
+
+
+arrKey=Object.keys(myJson[i]);
+arrVal=Object.values(myJson[i]);
+
+let varArr=[],keyArr=[];
+for (let i=0;i<arrVal[4].length;i++){
+     
+varArr.push(arrVal[4][i]["values"]);
+keyArr.push(arrVal[4][i]["type"]);
+}
+console.log(varArr,keyArr);
+
+for (let j=0;j<varArr.length;j++){
+var sel=document.createElement('select');
+sel.setAttribute('class','mySel'+i+j);
+sel.setAttribute('id','mySel'+i+j);
+var disp=document.createTextNode(keyArr[j]);
+myDiv.appendChild(disp);
+
+for(let k=0;k<varArr[j].length;k++){
+let op=JSON.parse(JSON.stringify(varArr[j][k]));
+let opt=document.createElement('option');
+opt.setAttribute('class','myOpt');
+opt.setAttribute('id','myOpt'+i+j+k);
+opt.textContent=op;
+opt.value=op;
+sel.appendChild(opt);
+}
+myDiv.appendChild(sel);
+
+}
+
+
+document.body.appendChild(myDiv);
+//console.log(arrKey);
+//console.log(arrVal);
+}
+}
+
+
+
+var myPro=[];
+function addToCart(){
+document.getElementById('mySel00').addEventListener('change',function(){
+let h=document.getElementById('mySel00').value;
+myPro[0]=h;
+alert(myPro);
+})
+
+document.getElementById('mySel01').addEventListener('change',function(){
+let hi=document.getElementById('mySel01').value;
+myPro[1]=hi;
+alert(myPro);
+})
+
+document.getElementById('mySel02').addEventListener('change',function(){
+let hii=document.getElementById('mySel02').value;
+myPro[2]=hii;
+alert(myPro);
+
+})
+
+
+document.getElementById('mySel10').addEventListener('change',function(){
+let hiii=document.getElementById('mySel10').value;
+myPro[0]=hiii;
+alert(myPro);
+})
+
+
+document.getElementById('mySel11').addEventListener('change',function(){
+let hiv=document.getElementById('mySel11').value;
+myPro[1]=hiv;
+alert(myPro);
+})
+
+console.log(myPro);
+}
+
+
+
+function findExPrice(myJson,myPro,i) {
+     
+let priceDet=[];
+for(let a=0;a<myJson.length;a++){
+    priceDet[a]= myJson[a]["varientDetails"]
+
+}
+let priceKey=[];
+for(let b=0;b<priceDet.length;b++){
+     for(let c=0;c<priceDet[b].length;c++){
+     priceKey.push(Object.values(priceDet[b][c]));
+     }
+ }
+let priceVal=[];
+ for(let d=0;d<priceKey.length;d++){
+      let n=priceKey[d].length;
+           priceVal.push(priceKey[d][n-1]);
+           priceKey[d].pop();
+ 
+ }
+ //console.log(priceKey,priceVal);
+
+ 
+for(let e=0;e<priceKey.length;e++){
+     let count=0;
+     for(let f=0;f<priceKey[e].length;f++){
+          
+          
+          if(myPro[f]==priceKey[e][f]){
+               
+               count++;
+               if(count==myPro.length){
+					 console.log(priceVal[e]);
+					 let nPrice=document.createElement('h4');
+					 
+					 nPrice.innerHTML=priceVal[e];
+					 myDiv.appendChild(nPrice);
+					 addRate= priceVal[e];
+					 totalCartValue[i]=rate[i]+addRate
+					 console.log(rate[i]+addRate);
+               }
+               
+          }
+          
+     }
+
+}
+}
+
+
+let myBtn1=document.createElement('button');
+myBtn1.setAttribute('class','b2');
+myBtn1.setAttribute('type','button');
+myBtn1.innerText="Buy Cart";
+myBtn1.addEventListener('click',function(){
+	let sum=0;
+for(let p=0;p<totalCartValue.length;p++){
+	sum+=totalCartValue[p];
+	}
+	console.log(sum);
+	alert(sum);
+});
+document.body.appendChild(myBtn1);
+
+
+
+
+
+
+displayProducts(myJson);
+addToCart();
+//findExPrice(myJson,myPro);
+</script>
+</body>
+</html>

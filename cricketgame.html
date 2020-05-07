@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>CRICKET GAME
+</h2>
+<button onclick="getRndInteger()" type="button">TEAM-1</button>
+<p id="demo"></p>
+<button onclick="getRndInteger1()" type="button">TEAM-2</button>
+<p id="demo1"></p>
+<button onclick="getwinner()" type="button">winner</button>
+<p id="demo2"></p>
+
+<script>
+ var arr1=[];
+var sum;
+var count=1;
+function getRndInteger(){
+ if (count<=18){
+ score=Math.round(Math.random()*6);
+  arr1.push(score)
+sum=arr1.reduce((a,b)=>a+b);
+document.getElementById("demo").innerHTML ="the score is " +arr1+" runs";
+document.getElementById("demo").innerHTML ="the score is " +sum+" runs";
+count++
+}
+else{alert("you have completed the overs")}
+}
+
+var arr2=[];
+var sum1;
+var count1=1
+function getRndInteger1(){
+ if (count1<=18){
+ score1=Math.round(Math.random()*6);
+ arr2.push(score1)
+sum1=arr2.reduce((a1,b1)=>a1+b1);
+document.getElementById("demo1").innerHTML ="the score is " +arr2+" runs";
+document.getElementById("demo1").innerHTML ="the score is " +sum1+" runs";
+count1++
+}
+else{alert("you have completed the overs")}
+}
+
+function getwinner(){
+if(sum<sum1){
+document.getElementById("demo2").innerHTML ="the winner is  TEAM-2";
+}
+else{
+document.getElementById("demo2").innerHTML ="the winner is  TEAM-1";
+}
+}
+</script>
+</body>
+</html>

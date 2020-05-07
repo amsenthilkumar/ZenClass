@@ -1,0 +1,96 @@
+<html>
+	<head>
+		<title>DOM manipulations</title>
+		
+	</head>
+	<body>
+	
+		 <div id="mydiv" style="width:200px;background:white" onmouseover="style.background='gray';" onmouseout="style.background='red';">
+    The Times of India is an Indian English-language daily newspaper owned by The Times Group. It is the third-largest newspaper in India by circulation and the second-largest selling English-language daily in the world according to Audit Bureau of Circulations. 
+    </div>
+	
+	</body>
+	
+</html>
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+<html>
+	<head>
+		<title>DOM manipulations</title>
+		
+		<script>
+		
+		function swap(mydiv1,mydiv2){
+			d1= document.getElementById(mydiv1);
+			d2=document.getElementById(mydiv2);
+			if( d2.style.display == "none" )
+   {
+      d1.style.display = "none";
+      d2.style.display = "block";
+   }
+   else
+   {
+      d1.style.display = "block";
+      d2.style.display = "none";
+   }
+		}
+		
+		</script>
+		
+	</head>
+	<body>
+		
+		<button type="button" onclick=swap('mydiv1','mydiv2') >Swap Divs! </button>
+		
+		<div id="mydiv1" style="display:block;>
+		<p style="color:black;"> i am content one</p>		 
+		</div>
+		
+		<div id="mydiv2" style="display:none;>
+		<p style="color:black;">i am content two</p> 
+		</div>
+	
+	</body>
+	
+</html>
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+<html>
+<head>
+
+<script>
+function changeImage(){
+	
+	
+	var num;
+	for (let i=2;i<=6;i++){
+		num=i;
+	document.getElementById("img1").src ="C:/Users/DELL/Desktop/JS/img/"+num+".png"
+	
+	}
+	
+}
+
+function backOldImage(){
+	document.getElementById("img1").src="C:/Users/DELL/Desktop/JS/img/7.png"
+
+}
+
+
+</script>
+
+</head>
+<body>
+	<img id = "img1" onmouseover="changeImage()"
+	onmouseout ="backOldImage()"  src= "C:/Users/DELL/Desktop/JS/img/1.png" width="300">
+
+
+</body>
+
+
+
+</html>

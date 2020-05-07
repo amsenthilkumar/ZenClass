@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+
+  <title>Countries</title>
+  
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style>
+* {
+  box-sizing: border-box
+}
+body{
+  background-color:black;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Dosis', sans-serif;
+  line-height: 1.6;
+  color: #666;
+  background: #F6F6F6;
+}
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  padding: 1.5rem 2.5rem;
+  background-image: linear-gradient(120deg, #fcfcfc 0%, #a6c1ee 100%);
+  margin: 0 0 2rem 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+img {
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
+}
+
+p {
+  padding: 0 2.5rem 2.5rem;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 1rem;
+  background: darkgoldenrod;
+  box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all .2s linear;
+  height: 383px;
+}
+
+.card:hover {
+  box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
+  transform: translate3D(0, -2px, 0);
+}
+
+@media screen and (min-width: 600px) {
+  .card {
+    flex: 1 1 calc(50% - 2rem);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .card {
+    flex: 1 1 calc(33% - 2rem);
+  }
+}
+
+.card:nth-child(2n) h1 {
+  background-image: linear-gradient(120deg, black 0%, #8fd3f4 100%);
+}
+
+.card:nth-child(4n) h1 {
+  background-image: linear-gradient(120deg, #333333 0%, #fecfef 100%);
+}
+
+.card:nth-child(5n) h1 {
+  background-image: linear-gradient(120deg, black 0%, #ffafbd 100%);
+}
+
+</style>
+</head>
+
+<body>
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for countries.." title="Type in a name">
+ 
+ <!-- <div id="result"></div> -->
+  <div id="root"></div></div>>
+
+  <script>
+
+
+
+
+
+
+
+
+
+
+  const app = document.getElementById('root');
+
+
+
+const container = document.createElement('div');
+container.setAttribute('class', 'container');
+
+
+app.appendChild(container);
+var allcountries=[];
+var request = new XMLHttpRequest();
+request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
+let countriesname=[];
+request.onload = function () {
+
+  // Begin accessing JSON data here
+  var data = JSON.parse(this.response);
+  if (request.status >= 200 && request.status < 400) {
+    data.forEach(name => {
+      const card = document.createElement('div');
+      card.setAttribute('class', 'card');
+      card.id=name.name;
+      const h1 = document.createElement('h1');
+      h1.textContent = name.name;
+      countriesname.push(name.name);   
+      const h2 = document.createElement('h2');
+      h2.textContent = name.nativeName; 
+        
+      const p = document.createElement('p');
+     name.capital = name.capital.substring(0, 300);
+      p.textContent = `${name.capital}...${name.population}`;
+        
+      const img=document.createElement('img');
+      img.src=name.flag;
+      card.appendChild(h1);
+      card.appendChild(h2);
+      card.appendChild(img);
+      card.appendChild(p);
+      allcountries.push(card);
+     
+     
+    });
+  } else {
+    const errorMessage = document.createElement('marquee');
+    errorMessage.textContent = `Gah, it's not working!`;
+    app.appendChild(errorMessage);
+  }
+}
+
+request.send();
+ console.log(countriesname);
+ console.log(allcountries);
+ 
+function myFunction(){
+  var   input=document.getElementById("myInput");
+  //var result=document.createElement("div");
+//var afghanistan=document.getElementById("Afghanistan");
+//result.appendChild(afghanistan);
+  //result.style.backgroundColor="white";
+  // document.body.appendChild(result);
+ let result=document.getElementById("results");
+var   filter = input.value.toUpperCase();
+    for (i = 0; i < countriesname.length; i++) {
+        a = countriesname[i]
+        // txtValue = a.textContent || a.innerText;
+        if (countriesname[i].toUpperCase().indexOf(filter) > -1) {
+            container.prepend(allcountries[i]);
+            console.log(allcountries[i]);
+            
+        } else {
+            console.log( " " );
+        }
+    }
+
+
+ }
+  
+  </script>
+</body>
+
+</html>
