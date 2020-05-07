@@ -1,0 +1,25 @@
+<html>
+<body>
+<script>
+var days=document.createElement('input');
+document.body.appendChild(days);
+var b=document.createElement('input');
+    document.body.appendChild(b)
+ var btn1=  document.createElement('button');
+    document.body.appendChild(btn1)
+    btn1.innerText='weeks';
+     btn1.addEventListener('click',function(){
+        var weeks= (Number(days.value))/7;
+        b.value=weeks;
+        
+    })
+  var btn2=  document.createElement('button');
+    document.body.appendChild(btn2)
+    btn2.innerText='years';
+     btn2.addEventListener('click',function(){
+        var years= (Number(days.value))/365;
+        b.value=years;
+     })
+    </script>
+    </body>
+</html>

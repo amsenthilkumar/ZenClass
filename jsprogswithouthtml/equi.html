@@ -1,0 +1,25 @@
+
+    <html>
+<body>
+<script>
+var a=document.createElement('input');
+    a.value=60;
+document.body.appendChild(a);
+    
+var b=document.createElement('input');
+    b.value=60;
+    document.body.appendChild(b);
+    var c=document.createElement('input');
+    document.body.appendChild(c);
+ var btn=  document.createElement('button');
+    document.body.appendChild(btn);
+    btn.innerText='angle-3';
+    btn.addEventListener('click',function(){
+        var angle= 180-((Number(a.value))+(Number(b.value)));
+        c.value=angle;
+        
+    })
+  
+    </script>
+    </body>
+</html>

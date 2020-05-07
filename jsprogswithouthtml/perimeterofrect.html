@@ -1,0 +1,20 @@
+<html>
+<body>
+<script>
+var l=document.createElement('input');
+document.body.appendChild(l)
+var b=document.createElement('input');
+    document.body.appendChild(b)
+var c=  document.createElement('input');
+    document.body.appendChild(c)
+ var btn=  document.createElement('button');
+    document.body.appendChild(btn)
+    btn.innerText='perimeter of rectangle';
+     btn.addEventListener('click',function(){
+        var perimeter= 2*(Number(l.value)+Number(b.value));
+        c.value=perimeter;
+        
+    })
+    </script>
+    </body>
+</html>

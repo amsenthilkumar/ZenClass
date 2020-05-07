@@ -1,0 +1,19 @@
+<html>
+<body>
+<script>
+var a=document.createElement('input');
+document.body.appendChild(a);
+var b=document.createElement('input');
+    document.body.appendChild(b);
+ var btn=  document.createElement('button');
+    document.body.appendChild(btn);
+    btn.innerText='sqrt';
+    btn.addEventListener('click',function(){
+        var sqrt1= Math.sqrt(Number(a.value));
+        b.value=sqrt1;
+        
+    })
+  
+    </script>
+    </body>
+</html>

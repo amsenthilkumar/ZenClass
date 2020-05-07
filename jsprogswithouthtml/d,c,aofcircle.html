@@ -1,0 +1,33 @@
+<html>
+<body>
+<script>
+var r=document.createElement('input');
+document.body.appendChild(r);
+var b=document.createElement('input');
+    document.body.appendChild(b)
+ var btn1=  document.createElement('button');
+    document.body.appendChild(btn1)
+    btn1.innerText='diameter';
+     btn1.addEventListener('click',function(){
+        var diameter= 2*(Number(r.value));
+        b.value=diameter;
+        
+    })
+  var btn2=  document.createElement('button');
+    document.body.appendChild(btn2)
+    btn2.innerText='circumference';
+     btn2.addEventListener('click',function(){
+        var circumference= 2*3.14*(Number(r.value));
+        b.value=circumference;
+        
+    })
+    var btn3=  document.createElement('button');
+    document.body.appendChild(btn3)
+    btn3.innerText='area';
+     btn3.addEventListener('click',function(){
+        var area= 3.14*((Number(r.value))*(Number(r.value)));
+        b.value=area;
+     })
+    </script>
+    </body>
+</html>

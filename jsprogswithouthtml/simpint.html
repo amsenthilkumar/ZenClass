@@ -1,0 +1,25 @@
+
+ <html>
+<body>
+<script>
+var p=document.createElement('input');
+document.body.appendChild(p);
+var t=document.createElement('input');
+    document.body.appendChild(t);
+    var r=document.createElement('input');
+    document.body.appendChild(r);
+    var x=document.createElement('input');
+    document.body.appendChild(x);
+ var btn=  document.createElement('button');
+    document.body.appendChild(btn);
+    btn.innerText='simple-interest';
+    btn.addEventListener('click',function(){
+        var simp= (Number(p.value))*(1+((Number(r.value))*(Number(t.value))))
+        x.value=simp;
+                                     
+        
+    })
+  
+    </script>
+    </body>
+</html>

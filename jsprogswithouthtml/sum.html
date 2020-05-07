@@ -1,0 +1,22 @@
+
+    <html>
+<body>
+<script>
+var a=document.createElement('input');
+document.body.appendChild(a);
+var b=document.createElement('input');
+    document.body.appendChild(b);
+    var c=document.createElement('input');
+    document.body.appendChild(c);
+ var btn=  document.createElement('button');
+    document.body.appendChild(btn);
+    btn.innerText='sum';
+    btn.addEventListener('click',function(){
+        var sum= (Number(a.value))+(Number(b.value));
+        c.value=sum;
+        
+    })
+  
+    </script>
+    </body>
+</html>

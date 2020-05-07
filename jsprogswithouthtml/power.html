@@ -1,0 +1,21 @@
+<html>
+<body>
+<script>
+var num1=document.createElement('input');
+document.body.appendChild(num1);
+var power=document.createElement('input');
+    document.body.appendChild(power);
+    var ans=document.createElement('input');
+    document.body.appendChild(ans)
+ var btn1=  document.createElement('button');
+    document.body.appendChild(btn1)
+    btn1.innerText='answer';
+     btn1.addEventListener('click',function(){
+        var answer= Math.pow((Number(num1.value)),(Number(power.value)));
+        ans.value=answer;
+        
+    })
+  
+    </script>
+    </body>
+</html>

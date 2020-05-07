@@ -1,0 +1,20 @@
+<html>
+<body>
+<script>
+var l=document.createElement('input');
+document.body.appendChild(l)
+var b=document.createElement('input');
+    document.body.appendChild(b)
+var c=  document.createElement('input');
+    document.body.appendChild(c)
+ var btn=  document.createElement('button');
+    document.body.appendChild(btn)
+    btn.innerText='area of rectangle';
+     btn.addEventListener('click',function(){
+        var area= Number(l.value)*Number(b.value);
+        c.value=area;
+        
+    })
+    </script>
+    </body>
+</html>
