@@ -1,0 +1,23 @@
+
+
+; in js is called syntatic sugar
+ 
+programming paradigms - proceduralfunctions,oops,dynamic,imperative,logical
+
+                                   
+                                                     PYTHON
+
+no main func
+for loop
+no open braces
+instead of braces we need to press tab and continue the code(indentation)
+
+compiler- reads whole prog and converts it to lower level lang
+interpreter-reads the code one after the other line and converts
+
+python doesnt needs data types
+
+TASK-1
+1.Greatest of 3 nums using nested if
+2.uber/ola task
+  
