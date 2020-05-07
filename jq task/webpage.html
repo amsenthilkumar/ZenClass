@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>get elements from tag</title>
+    <style>
+        #first{
+    background: red;
+    color:white;
+    width: 100%;
+    height: 30px;
+
+        }
+        .new-rect
+        {
+            background: blue;
+    color:white;
+    width: 100%;
+    height: 30px;
+
+   
+        }
+    </style>
+
+</head>
+<body>
+    <div id="first">vasudha</div>
+    <button onclick="change();">click to change</button>
+    <input id="containername" type="text">
+    add item:<input id ="additem" type="text">
+    <button onclick="adddiv();">add a new div</button>
+    <script>
+        function change(){
+        let name345 =document.getElementById('containername').value;
+        document.getElementById('first').innerHTML=name345;
+        }
+         function  adddiv() {  
+          var name=document.getElementById('additem').value;
+          var div = document.createElement('div');
+           div.innerHTML=name;
+          div.className = 'new-rect';      
+            //div.style.backgroundColor = "black";
+
+       document.getElementsByTagName('body')[0].appendChild(div);
+    }
+
+    </script>
+
+</body>
+>https://www.theodinproject.com/courses/web-development-101/lessons/dom-manipulation
